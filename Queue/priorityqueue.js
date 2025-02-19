@@ -24,7 +24,7 @@ class PriorityQueue {
                 this.collection.push(value);
             }
         }
-    }
+    } 
 
     dequeue() {
         var value = this.collection.shift();
