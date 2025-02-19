@@ -15,6 +15,7 @@ class Search {
                 keys2.toLowerCase().includes(query.toLowerCase())           
             )
         });
+        console.log(results)
         console.timeEnd("Linear Search Time");
         // time = console.timeEnd()
         return results
