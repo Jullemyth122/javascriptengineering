@@ -29,8 +29,8 @@ class Sets {
     // this method to remove the certain element of set
     remove(element) {
         if (this.has(element)) {
-            index = collection?.indexOf(element);
-            collection?.splice(index, 1);
+            const index = this.collection?.indexOf(element);
+            this.collection?.splice(index, 1);
             return true;
             
         }
@@ -39,7 +39,7 @@ class Sets {
     }
 
     size() {
-        return collection?.length;
+        return this.collection?.length;
     }
 
     // This is the union of sets that will combine  the two sets
@@ -87,23 +87,71 @@ class Sets {
         return firstSet.every((elem, index) => {
             return otherSet.has(elem);
         });
+        
     }
+
+    // subsetOfSubSets(otherSet) {
+    //     var firstSet = this.values();
+    //     const result = firstSet.every((elem, index) => {
+    //         return otherSet.has(elem);
+    //     })
+    //     if (result == true) {
+            
+    //     }
+    // }
+
+
 
 }
 
 // Create collections outside the class
-let collectionA = ['a', 'd'];
+let collectionA = ['d', 'd'];
 let collectionB = ['b', 'c', 'a', 'd'];
 
 // Pass the same external collections to different sets
 let setA = new Sets(collectionA);
 let setB = new Sets(collectionB);
 
+
 // Test intersection
-console.log(setA.intersection(setB).values()); // Should return ['a', 'd']
-console.log(setA.intersection(setB).values()); // Should return ['a', 'd']
+// console.log(setA.intersection(setB).values()); // Should return ['a', 'd']
+// console.log(setA.intersection(setB).values()); // Should return ['a', 'd']
 
 // Modify one set and see that it doesn't affect the other (since intersection creates a copy)
-setA.add('x');
-console.log(setA.values()); // Should show ['a', 'd', 'x']
-console.log(setB.values()); // Should still show ['b', 'c', 'a', 'd']
+setA.add("x");
+setA.add("m");
+setA.add("i");
+
+// console.log(setA.values()); // Should show ['a', 'd', 'x', 'm', 'i']
+// console.log(setB.values()); // Should still show ['b', 'c', 'a', 'd']
+
+
+// console.log(setA.intersection(setB).values()); // Should return ['a', 'd']
+
+
+let setC = new Sets([]);
+
+setC.add('m');
+setC.add('j');
+setC.add('i');
+setC.add('b');
+setC.add('q');
+setC.add('u');
+setC.add('a');
+setC.add('c');
+setC.add('d');
+setC.add('x');
+setC.add('z');
+
+console.log(setC.values())
+console.log(setA.values())
+x = setB.subset(setC)
+
+if (x) {
+    console.log(setA.subset(setC))
+}
+
+setC.remove('a');
+
+console.log(setB.subset(setC))
+console.log(setA.subset(setC))
