@@ -151,7 +151,7 @@ class LinkedList {
             curr = curr.next;
         }
 
-        return this.head;
+        // return this.head;
         // console.log(curr);
 
     }
@@ -312,7 +312,6 @@ class LinkedList {
     }   
 
 
-
     printNode1(node = this.head, level = 0, prefix1 = "--->") {
         // console.log(node.next);
         if (node.next != null) {
@@ -364,12 +363,29 @@ let link = new LinkedList();
 
 
 link.prepend(3);
+link.prepend(3);
+link.prepend(3);
+link.prepend(4);
+link.prepend(4);
 link.prepend(4);
 link.prepend(5);
+link.prepend(5);
+link.prepend(5);
+link.prepend(5);
+link.prepend(6);
+link.prepend(6);
+link.prepend(6);
 link.prepend(6);
 link.prepend(7);
+link.prepend(7);
+link.prepend(7);
+link.prepend(7);
+link.prepend(8);
+link.prepend(8);
 link.prepend(8);
 link.prepend(9);
+link.prepend(8);
+link.prepend(8);
 
 
 // link.printNode1();
