@@ -41,51 +41,6 @@ By integrating DSA challenges with hands-on JavaScript applications, we aim to b
 
 ---
 
-## Repository Structure
-
-The repository is organized as follows:
-
-```plaintext
-├── challenges/
-│   ├── arrays/
-│   │   ├── two-sum.js
-│   │   ├── merge-intervals.js
-│   │   └── README.md
-│   ├── linked-lists/
-│   │   ├── reverse-linked-list.js
-│   │   └── README.md
-│   ├── trees/
-│   │   ├── bst-implementation.js
-│   │   └── tree-traversal.js
-│   └── graphs/
-│       ├── graph-search.js
-│       └── shortest-path.js
-├── explorations/
-│   ├── performance-analysis/
-│   │   ├── benchmark.js
-│   │   └── README.md
-│   ├── design-patterns/
-│   │   ├── modular-design.js
-│   │   └── README.md
-│   └── case-studies/
-│       ├── real-world-problem.js
-│       └── README.md
-├── docs/
-│   ├── DSA-concepts.md
-│   ├── best-practices.md
-│   └── roadmap.md
-├── tests/
-│   ├── unit/
-│   │   ├── arrays.test.js
-│   │   ├── linked-lists.test.js
-│   │   └── trees.test.js
-│   └── integration/
-│       ├── performance.test.js
-│       └── design.test.js
-├── package.json
-├── README.md
-└── .gitignore
-
 
 
 ### Explanation:
