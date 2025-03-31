@@ -116,9 +116,13 @@ class LinkedList {
                     current = current.next;
                 }
                 
+                // Pass the winner in the tail node
                 tail.next = winner;
+
+                // Assign the tail
                 tail = tail.next;
 
+                // Remove the next to avoid loop
                 tail.next = null;
             }
             
