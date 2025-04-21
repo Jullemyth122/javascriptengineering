@@ -152,9 +152,7 @@ class Solution {
         // arr[] non-negative integers  0 < n;
         
         // Summation of the integers in a starting point to ending point index.
-        
-        // Time complexity is O(n^2) since it scan every array repeatedly
-        
+                
         
         // target = 20
         // [3,5,12,5,13,2]
@@ -256,3 +254,32 @@ class Solution {
     }
 }
 
+
+
+class Solution {
+
+    thirdLargest(arr) {
+        let x = 3 // this is count of largest
+        
+        
+        let store = new Set()
+        let thirdLarge = Math.max(...arr)
+        if (arr.length >= 3) {
+            for (let i = 0; i < x ; i++) {
+                thirdLarge = Math.max(...arr)
+                const index = arr.indexOf(thirdLarge);
+                arr.splice(index, 1)
+            }
+            
+            console.log(thirdLarge)
+        
+        } else {
+            return -1;
+        }
+
+    }
+}
+
+// let sol = new Solution()
+
+// sol.thirdLargest([5,5,5])
