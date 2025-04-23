@@ -86,7 +86,6 @@ class LinkedList {
         // console.log(idx)
         if(idx == 0) {
             const node = this.head;
-            // node.prev = 
             
             // this.head = node.next;
             // this.head.prev = node.prev
