@@ -41,8 +41,31 @@ class Node {
         return null;
     }
 
-    findTwo(predicate1) {
-        
+    findTwo(predicate1, predicate2, depth = 0) {
+        let first = null;
+        let second = null;
+
+        const recurse = (node, depth) => {
+            if(!first && predicate1(node)) {
+                first = { node, depth };
+            } 
+            if(!second && predicate2(node)) {
+                second = { node, depth };
+            }
+
+            if(first && second ) return;
+
+            for(const child of node.children) {
+            
+                recurse(child, depth + 1);
+
+                if(first && second ) return;
+            }
+
+        }
+
+        recurse(this, depth)
+        return { first, second };
     }
 
 }
@@ -69,6 +92,11 @@ class GenericTree {
     find(predicate) {
         // let depth = 0
         return this.root.find(predicate);
+    }
+
+    findTwo(predicate1, predicate2) {
+        return this.root.findTwo(predicate1, predicate2, 0);
+
     }
     // remove(predicate) {
 
@@ -106,6 +134,16 @@ tree.add(37).addChild(53).addChild(211).addChild(19);
 
 let target = 18
 
-console.log(target, tree.find(node => node.data == target) ? tree.find(node => node.data == target) : "No found target"  )
+let twoTargets = [13, 53]
+// console.log(target, tree.find(node => node.data == target) ? tree.find(node => node.data == target) : "No found target"  )
+const { first, second } = tree.findTwo(
+  node => node.data === twoTargets[0],   // predicate1: is even
+  node => node.data === twoTargets[1]        // predicate2: greater than 50
+);
 
+if (first)  console.log(first ,`found at depth ${first.depth}`);
+else        console.log("13 not found");
+
+if (second) console.log(second, `found at depth ${second.depth}`);
+else        console.log("53 not found");
 // tree.root.printChild();
