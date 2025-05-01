@@ -165,13 +165,13 @@ setA.arr = [10,5,5,11,5, 16, 17, 16,10,11,18,17]
 
 
 let sample1 = setA.removeDuplicatesFromRightToLeft();
-// console.log(sample1)
+console.log(sample1)
 
 setA.arr = [10,5,5,11,5, 16, 17, 16,10,18,10,18, 10, 18]
 
 
 let sample2 = setA.removeDuplicatesFromLeftToRight();
-// console.log(sample2)
+console.log(sample2)
 
 // setA.arr = [10, 6, 5, 6, 0, 1 ,10, 13, 6, 1, 3, 6, 13, 3] // sample 1
 setA.arr = [22,1,7,2,11,1,6,2, 1,6] // sample 1
@@ -184,9 +184,9 @@ setA.arr = [22,1,7,2,11,1,6,2, 1,6] // sample 1
 
 setA.arr = [ 66,29, 31, 41, 51, 666,771, 113 ]
 
-console.log(setA.arr);
-let sample4 = setA.LargestNumAndLowestMod();
-let sample5 = setA.MaxNumButMustLowestMod();
+// console.log(setA.arr);
+// let sample4 = setA.LargestNumAndLowestMod();
+// let sample5 = setA.MaxNumButMustLowestMod();
 
 
 

@@ -21,6 +21,7 @@ Welcome to the **DSA and Exploration in DSA Problems** repository! This project 
 ## Overview
 
 In this repository, you will find a curated set of challenges, explorations, and case studies related to DSA problems with a strong focus on JavaScript. The goal is to:
+
 - **Enhance Algorithmic Thinking:** By tackling diverse DSA problems.
 - **Explore JavaScript Capabilities:** Using native JavaScript constructs and modern frameworks.
 - **Document Exploratory Findings:** Detailed write-ups, code samples, and best practices to improve both academic and practical understanding.
@@ -41,9 +42,8 @@ By integrating DSA challenges with hands-on JavaScript applications, we aim to b
 
 ---
 
-
-
 ### Explanation:
+
 - **challenges/**: Contains problem statements and implementations categorized by data structures.
 - **explorations/**: Contains deeper dives into performance analysis, design patterns, and case studies.
 - **docs/**: Comprehensive documentation covering DSA concepts, coding standards, and the project roadmap.
@@ -60,4 +60,4 @@ To get started with this repository, follow the steps below:
    ```bash
    git clone https://github.com/yourusername/dsa-exploration-js.git
    cd dsa-exploration-js
-
+   ```

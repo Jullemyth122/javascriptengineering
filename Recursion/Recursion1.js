@@ -1,6 +1,8 @@
 class Recursion {
     constructor(num) {
         this.num = num
+        this.PAIRS = { '(': ')', '[': ']', '{': '}' };
+
     }
 
     findAllSum(n = this.num) {
@@ -260,11 +262,72 @@ class Recursion {
         return this.linearSearch(arr, target, i + 1);
     }
 
+    removeDuplicates(arr, i = 0, seen = new Set()) {
+        if(i >= arr.length) {
+            return arr;
+        }
+
+        if(seen.has(arr[i])) {
+            arr.splice(i, 1)
+            return this.removeDuplicates(arr, i, seen);
+        } 
+
+        seen.add(arr[i]);
+
+        return this.removeDuplicates(arr, i + 1, seen);
+
+    }
+
+    removeDuplicatesFromRight(arr, i = arr.length - 1, seen = new Set()) {
+        if(i < 0) {
+            return arr;
+        }
+        
+        if(seen.has(arr[i])) {
+            arr.splice(i, 1)
+        } else {
+            seen.add(arr[i]);
+        }    
+
+        return this.removeDuplicatesFromRight(arr, i - 1, seen);
+
+    }
+
+
+    isClosedString(s) {
+        // strip out all whitespace
+        s = s.replace(/\s+/g, '');
+
+        // base cases: empty or single-char strings are closed
+        if (s.length < 2) return true;
+
+        const first = s[0], last = s[s.length - 1];
+
+        if (this.PAIRS[first]) {
+            if (this.PAIRS[first] !== last) return false;
+            return this.isClosedString(s.slice(1, -1));
+        }
+
+        if (first === last) {
+            return this.isClosedString(s.slice(1, -1));
+        }
+
+        return false;
+
+    }
+
+    findClosedStrings(arr, i = 0, result = []) {
+        if (i >= arr.length) return result;
+
+        if (this.isClosedString(arr[i])) {
+            result.push(arr[i]);
+        }
+        return this.findClosedStrings(arr, i + 1, result);
+    }
+
     
 
-
-
-
+    
     isPrime(n) {
         if (n <= 1) return false;
         if (n <= 3) return true;
@@ -323,7 +386,7 @@ let recurse = new Recursion(5);
 
 // let arr = [1,7,3,21, 11, 27.9, 18];
 let arr = [1,7,3,21, 11, 16, 17];
-let arr2 = [6,6,1, 18, 37, 33, 29, 27, 55, 21];
+let arr2 = [6,6,7, 7, 13, 21, 32, 4 ,5 ,6, 15, 17 , 29, 33, 15, 13, 17, 13 , 7,66, 6,17, 17, 6, 66];
 // recurse.printFun()
 
 // console.log(
@@ -350,6 +413,22 @@ console.log("--------")
 
 
 let sorted = [...arr2].sort( (a,b) => a - b );
-console.log( sorted, recurse.brSearch(sorted, 21) );
-console.log( arr2, recurse.linearSearch(arr2, 29) );
+// console.log( sorted, recurse.brSearch(sorted, 21) );
+// console.log( arr2, recurse.linearSearch(arr2, 29) );
+// console.log(arr2)
+// console.log( recurse.removeDuplicatesFromRight(arr2) );
+
+let string1 = "([ { [ 1 ] } ])"
+let string2 = "(0 1 22 1 0)"
+let string3 = "(0 0 10 0 0)"
+let string4 = "[{}]"
+// console.log( recurse.isClosedString(string1) );
+// console.log( recurse.isClosedString(string2) );
+// console.log( recurse.isClosedString(string3) );
+// console.log( recurse.isClosedString(string4) );
+
+// console.log(recurse.findClosedStrings([string1, string2, string3, string4]))
+
+
+// console.log( recurse.removeDuplicates(arr2) );
 // "xxsada".substring
